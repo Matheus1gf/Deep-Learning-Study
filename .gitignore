@@ -1,0 +1,27 @@
+# Ignorar arquivos específicos
+data/
+
+# Ignorar diretório "Arquivos do Professor"
+Arquivos do Professor/
+
+# Arquivos e diretórios comuns a ignorar em projetos Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.env
+*.venv
+
+# Logs e temporários
+*.log
+*.tmp
+*.swp
+.DS_Store
+
+# Arquivos de ambiente virtual
+venv/
+.env
+
+# Configurações de IDE
+.vscode/
+.idea/

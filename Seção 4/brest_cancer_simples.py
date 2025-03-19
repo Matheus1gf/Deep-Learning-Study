@@ -16,6 +16,7 @@ print(X_train.shape)
 print(y_train.shape)
 print(X_test.shape)
 print(y_test.shape)
+print("-----------------------------------------------------------------------------------------------")
 
 neural_network = Sequential([
     tf.keras.layers.Input(shape=(30,)),
@@ -32,10 +33,29 @@ optimizer = tf.keras.optimizers.Adam(learning_rate=0.001, clipvalue=0.5)
 neural_network.compile(optimizer=optimizer, loss='binary_crossentropy', metrics='binary_accuracy')
 neural_network.fit(X_train, y_train, batch_size=10, epochs=100)
 
+pesos0 = neural_network.layers[0].get_weights()
+print(pesos0)
+print(len(pesos0))
+print(pesos0[1])
+print("-----------------------------------------------------------------------------------------------")
+
+pesos1 = neural_network.layers[1].get_weights()
+print(pesos1)
+print(len(pesos1))
+print(pesos1[1])
+print("-----------------------------------------------------------------------------------------------")
+
+pesos2 = neural_network.layers[2].get_weights()
+print(pesos2)
+print(len(pesos2))
+print(pesos2[1])
+print("-----------------------------------------------------------------------------------------------")
+
 predict = neural_network.predict(X_test)
 predict = predict > 0.5
 print(predict)
 print(y_test)
+print("-----------------------------------------------------------------------------------------------")
 
 print(accuracy_score(y_test, predict))
 print(confusion_matrix(y_test, predict))
